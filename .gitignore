@@ -2,3 +2,4 @@
 /target/
 *.class
 .nrepl-port
+.clj-kondo/.cache/
