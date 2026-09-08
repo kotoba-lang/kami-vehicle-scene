@@ -50,7 +50,7 @@
   on real `kotoba-lang/kami-vehicle` can feed this plan's `:sedan-spec`
   straight into a ported `sedan` constructor to get the original's exact
   `Vehicle` node graph."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [scene :as scene]))
 
 ;; ---------------------------------------------------------------------

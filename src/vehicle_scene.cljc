@@ -47,7 +47,7 @@
   translation for any future integration; the duck-typed builtin table
   below is keyed the same (hyphenated) way as the EDN, since we do not
   have a real `SurfaceKind` enum to compare against."
-  (:require [scene :as scene]
+  (:require [kotoba.lang.text] [scene :as scene]
             [vehicle-scene.garage :as garage]))
 
 ;; Re-export the garage/powertrain surface, matching the original
@@ -127,7 +127,7 @@
   string. `:asphalt-dry` -> \"asphalt_dry\". `nil` for non-keywords."
   [k]
   (when-let [full (scene/kw-key k)]
-    (clojure.string/replace full "-" "_")))
+    (kotoba.lang.text/replace full "-" "_")))
 
 (defn surface-hyphen-id
   "Resolve a surface keyword KEY (or VALUE) `k` to its hyphenated id
