@@ -123,4 +123,4 @@ tests and `tests/vehicle_parity.rs`'s 3 tests to shipped-EDN
 self-consistency checks, plus a differential-resolution test and a
 namespace-loads smoke test — 12 tests.
 
-**20 tests / 193 assertions, 0 failures, 0 errors** (`clojure -M:test`).
+**20 tests / 193 assertions, 0 failures, 0 errors** (`kbb -M:test`).
