@@ -10,14 +10,14 @@ commit `a8368f9c0d784dbc9d11e8fa8f407aa95c7ce4fa`), per ADR-2607010930.
 
 Two namespaces, one per original Rust module:
 
-- **`vehicle-scene`** (`src/vehicle_scene.cljc`, 267 lines) — ported
+- **`vehicle-scene`** (`src/vehicle_scene.cljk`, 267 lines) — ported
   from `src/lib.rs`. Turns canonical `:ground/surfaces` EDN (an 8-entry
   friction/grip/tint/name table) and `:ground/map` EDN (the
   `demo-circuit` zone map) into duck-typed `SurfaceParams` /
   `MapGround`/`SurfaceZone` maps, plus `surface-at` (last-matching-zone
   wins, so a carved-out ice/sand/mud patch overrides the broader asphalt
   strip it sits inside).
-- **`vehicle-scene.garage`** (`src/vehicle_scene/garage.cljc`, 521
+- **`vehicle-scene.garage`** (`src/vehicle_scene/garage.cljk`, 521
   lines) — ported from `src/garage.rs`. Turns canonical `:vehicle/*` EDN
   (4 engine torque-curve presets, 1 gearbox preset, 2 Pacejka tire
   presets, and 6 garage vehicle `SedanSpec`s — sedan/hatchback/suv/
@@ -112,12 +112,12 @@ file IO and stay portable to cljs/wasm.
 
 ## Tests
 
-`test/vehicle_scene_test.cljc` (91 lines) ports all 5 original
+`test/vehicle_scene_test.cljk` (91 lines) ports all 5 original
 `#[test]`s from `src/lib.rs`, adapts `tests/parity.rs`'s 2 tests to
 shipped-EDN self-consistency checks (no real `kami_vehicle` oracle
 available), plus a namespace-loads smoke test — 8 tests.
 
-`test/vehicle_scene/garage_test.cljc` (142 lines) ports all 3 original
+`test/vehicle_scene/garage_test.cljk` (142 lines) ports all 3 original
 `#[test]`s from `src/garage.rs`, adapts `tests/garage_parity.rs`'s 4
 tests and `tests/vehicle_parity.rs`'s 3 tests to shipped-EDN
 self-consistency checks, plus a differential-resolution test and a
